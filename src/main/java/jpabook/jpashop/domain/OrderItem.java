@@ -1,0 +1,34 @@
+package jpabook.jpashop.domain;
+
+import jpabook.jpashop.domain.item.Item;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+/**
+ * @author 이승환
+ * @since 2020-08-09
+ */
+@Entity
+@Getter
+@Setter
+public class OrderItem {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "orber_item_id")
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private Item item;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    private int orderPrice; // 주문가격
+    private int count;      // 주문수량
+
+}
