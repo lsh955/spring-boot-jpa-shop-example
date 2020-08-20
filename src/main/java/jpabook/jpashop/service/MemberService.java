@@ -21,6 +21,7 @@ public class MemberService {
 
     /**
      * 회원가입
+     *
      * @param member
      * @return
      */
@@ -33,17 +34,19 @@ public class MemberService {
 
     /**
      * 중복회원 검증
+     *
      * @param member
      */
     private void validateDuplicateMember(Member member) {
         List<Member> findMembers = memberRepository.findByName(member.getName());
-        if(!findMembers.isEmpty()) {
+        if (!findMembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 회원입니다.");
         }
     }
 
     /**
      * 회원전체 조회
+     *
      * @return
      */
     public List<Member> findMembers() {
@@ -52,6 +55,7 @@ public class MemberService {
 
     /**
      * 단건 조회
+     *
      * @param memberId
      * @return
      */

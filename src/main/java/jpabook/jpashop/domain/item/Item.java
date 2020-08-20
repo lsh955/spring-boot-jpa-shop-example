@@ -36,6 +36,7 @@ public abstract class Item {
 
     /**
      * 재고증가
+     *
      * @param quantity
      */
     public void assStock(int quantity) {
@@ -44,6 +45,7 @@ public abstract class Item {
 
     /**
      * 재고감소
+     *
      * @param quantity
      */
     public void removeStock(int quantity) {
