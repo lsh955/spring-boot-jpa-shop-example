@@ -72,6 +72,7 @@ public class Order {
     }
 
     // 비즈니스 로직
+
     /**
      * 주문 취소
      */
@@ -84,8 +85,9 @@ public class Order {
             orderItem.cancel();
         }
     }
-    
+
     // 조회로직
+
     /**
      * 전체 주문 가격 조회
      */

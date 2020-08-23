@@ -32,6 +32,7 @@ public class OrderRepository {
 
     /**
      * JPQL로 처리
+     *
      * @param ordersearch
      * @return
      */
@@ -75,6 +76,7 @@ public class OrderRepository {
 
     /**
      * JPA Criteria로 처리
+     *
      * @param ordersearch
      * @return
      */

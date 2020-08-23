@@ -74,8 +74,8 @@ public class OrderServiceTest {
         // then(검증)
         fail("재고 수량 부족 예외가 발생해야 한다.");
     }
-    
-   @Test
+
+    @Test
     public void 주문취소() throws Exception {
         // given(준비)
         Member member = createMember();
@@ -83,7 +83,7 @@ public class OrderServiceTest {
 
         int orderCount = 2;
         Long orderId = orderService.order(member.getId(), item.getId(), orderCount);
-                
+
         // when(실행)
         orderService.cancelOrder(orderId);
 
@@ -92,7 +92,7 @@ public class OrderServiceTest {
         assertEquals("주문 취소시 상태는 CANCEL 이다.", OrderStatus.CANCEL, getOrder.getStatus());
         assertEquals("주문이 취소된 상품은 그만큼 재고가 증가해야 한다.", 10, item.getStockQuantity());
     }
-    
+
     private Book createBook(String name, int price, int stockQuantity) {
         Book book = new Book();
         book.setName(name);
